@@ -1,30 +1,20 @@
 import {Action} from '@ngrx/store';
+import {UserDto} from '../dto/user-dto';
 
-export const EDIT_TEXT = '[Post] Edit';
-export const UPVOTE = '[Post] Upvote';
-export const DOWNVOTE = '[Post] Downvote';
+export const CREATE_USER = '[Post] Edit';
 export const RESET = '[Post] Reset';
 
-export class EditText implements Action {
-  readonly type = EDIT_TEXT;
+export class CreateUser implements Action {
+  readonly type = CREATE_USER;
 
-  constructor(public payload: string) {
+  constructor(public payload: UserDto) {
   }
 }
 
-export class Upvote implements Action {
-  readonly type = UPVOTE;
-}
-
-export class Downvote implements Action {
-  readonly type = DOWNVOTE;
-}
 export class Reset implements Action {
   readonly type = RESET;
 }
 
 export type All
-  = Upvote
-  | Downvote
-  | Reset
-  | EditText;
+  = CreateUser
+  | Reset;

@@ -6,8 +6,34 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+  <link href="assets/toastify/css/toastify.css" rel="stylesheet" type="text/css">
+
+
 </head>
 <body>
   <app-root></app-root>
+  <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/toastify/js/toastify.js">
+  <script>
+    function successToast(msg) {
+      var myToast = Toastify({
+        text: msg,
+        backgroundColor: '#499675',
+        duration: 5000
+      });
+      myToast.showToast();
+    }
+
+    function failureToast(msg) {
+      var myToast = Toastify({
+        text: msg,
+        backgroundColor: '#cd4c45',
+        duration: 5000
+      });
+      myToast.showToast();
+    }
+  </script>
+
 </body>
 </html>

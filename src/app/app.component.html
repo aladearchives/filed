@@ -1,3 +1,38 @@
-<button (click)="spanishMessage()">Spanish</button>
-<button (click)="frenchMessage()">French</button>
+<button (click)="resetUser()">Reset</button>
+<button (click)="createUser()">Create User</button>
+<div class="basic-form">
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>First Name</label>
+      <input type="text" class="form-control" name="firstName" #firstName="ngModel"
+             [(ngModel)]="userDto.firstName" placeholder="{{userDto.firstName}}" required>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Last Name</label>
+      <input type="text" class="form-control" name="firstName" #lastName="ngModel"
+             [(ngModel)]="userDto.lastName" placeholder="{{userDto.lastName}}" required>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Email</label>
+      <input type="email" class="form-control" name="email" #email="ngModel"
+             [(ngModel)]="userDto.email" placeholder="{{userDto.email}}" required>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Phone Number</label>
+      <input type="number" class="form-control" name="phoneNumber" #phoneNumber="ngModel"
+             [(ngModel)]="userDto.phoneNumber" placeholder="{{userDto.phoneNumber}}" required>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Monthly Advertising Budget</label>
+      <input type="number" class="form-control" name="monthlyAdvertisingBudget" #monthlyAdvertisingBudget="ngModel"
+             [(ngModel)]="userDto.monthlyAdvertisingBudget" placeholder="{{userDto.monthlyAdvertisingBudget}}" required>
+    </div>
+  </div>
+</div>
 <router-outlet></router-outlet>

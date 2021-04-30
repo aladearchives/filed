@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
+import {UserDto} from './dto/user-dto';
+import * as PostActions from './actions/post.actions';
 
 interface AppState {
-  message: string;
+  user: UserDto;
 }
 
 @Component({
@@ -13,17 +15,19 @@ interface AppState {
 })
 export class AppComponent {
 
-  message$: Observable<string>;
+  user: Observable<UserDto>;
+  public userDto: UserDto = new UserDto();
+
   constructor(private store: Store<AppState>) {
-    this.message$ = this.store.select('message');
+    this.user = this.store.select('user');
   }
 
-  spanishMessage() {
-    this.store.dispatch({type: 'SPANISH'});
+  createUser() {
+    this.store.dispatch(new PostActions.CreateUser(this.userDto));
   }
 
-  frenchMessage() {
-    this.store.dispatch({type: 'FRENCH'});
+  resetUser() {
+    this.store.dispatch(new PostActions.Reset());
   }
 
 

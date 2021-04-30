@@ -1,8 +1,12 @@
 export class UserDto {
-  public firstName: string;
-  public lastName: string;
-  public phoneNumber: number;
-  public email: string;
-  public monthlyAdvertisingBudget: number;
+  public firstName = 'Mike';
+  public lastName = 'Jordan';
+  public phoneNumber = 23;
+  public email = 'jordan23@gmail.com';
+  public monthlyAdvertisingBudget = 200000;
+
+  constructor() {
+  }
+
 }
 

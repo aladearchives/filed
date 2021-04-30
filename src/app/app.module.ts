@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {StoreModule} from '@ngrx/store';
-import {simpleReducer} from './reducer/simple-reducer';
 import {postReducer} from './reducer/post.reducer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,9 +15,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      message: simpleReducer,
       post: postReducer
-    })
+    }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
